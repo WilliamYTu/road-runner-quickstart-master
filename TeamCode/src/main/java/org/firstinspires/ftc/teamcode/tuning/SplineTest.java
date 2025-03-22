@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.tuning;
 
+import android.util.Log;
+
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.Vector2d;
 import com.acmerobotics.roadrunner.ftc.Actions;
@@ -19,18 +21,20 @@ public final class SplineTest extends LinearOpMode {
 
             Actions.runBlocking(
                 drive.actionBuilder(beginPose)
-                        .splineTo(new Vector2d(30, 30), Math.PI / 2)
-                        .splineTo(new Vector2d(0, 60), Math.PI)
+                        .splineTo(new Vector2d(12, 12), Math.PI / 2)
+                        .splineTo(new Vector2d(0, 24), Math.PI)
                         .build());
         } else if (TuningOpModes.DRIVE_CLASS.equals(TankDrive.class)) {
             TankDrive drive = new TankDrive(hardwareMap, beginPose);
 
             waitForStart();
-
+            //Actions.runBlocking(drive.moveToPoint(10, 20));
+            // Actions.runBlocking(() -> Log.d("Test", "True"));
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
-                            .splineTo(new Vector2d(30, 30), Math.PI / 2)
-                            .splineTo(new Vector2d(0, 60), Math.PI)
+                            .lineToX(10)
+                            //.splineTo(new Vector2d(12, 12), Math.PI / 2)
+                            //.splineTo(new Vector2d(0, 24), Math.PI)
                             .build());
         } else {
             throw new RuntimeException();
