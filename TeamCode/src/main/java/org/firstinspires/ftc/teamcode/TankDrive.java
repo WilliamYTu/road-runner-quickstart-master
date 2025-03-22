@@ -71,13 +71,13 @@ public final class TankDrive {
                 RevHubOrientationOnRobot.UsbFacingDirection.RIGHT;
 
         // drive model parameters
-        public double inPerTick = 0.009354254677;
+        public double inPerTick = 0.0223880597014925;
         public double trackWidthTicks = 0;
 
         // feedforward parameters (in tick units)
-        public double kS = 0;
-        public double kV = 0;
-        public double kA = 0;
+        public double kS = 7.5;
+        public double kV = 0.02;
+        public double kA = 0.006;
 
         // path profile parameters (in inches)
         public double maxWheelVel = 50;
@@ -247,7 +247,7 @@ public final class TankDrive {
         }
 
         // TODO: reverse motor directions if needed
-        rightMotors.get(0).setDirection(DcMotorSimple.Direction.REVERSE);
+        leftMotors.get(0).setDirection(DcMotorSimple.Direction.REVERSE);
 
         // TODO: make sure your config has an IMU with this name (can be BNO or BHI)
         //   see https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/configuring/index.html

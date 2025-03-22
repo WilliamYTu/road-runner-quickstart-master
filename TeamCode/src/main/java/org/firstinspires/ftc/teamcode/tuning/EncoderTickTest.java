@@ -36,7 +36,7 @@ public class EncoderTickTest extends LinearOpMode{
         while (opModeIsActive()) {
             float leftPosition = leftMotor.getCurrentPosition();
             float rightPosition = rightMotor.getCurrentPosition();
-            float totalPosition = (leftPosition * -1) + rightPosition;
+            float totalPosition = ((leftPosition * -1) + rightPosition) / 2;
             /*
             telemetry.addData("Left Encoder", leftPosition);
             telemetry.addData("Right Encoder", rightPosition);
