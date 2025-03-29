@@ -1,16 +1,16 @@
 package org.firstinspires.ftc.teamcode.teleop;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-//import com.acmerobotics.dashboard.FtcDashboard;
-//import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
+import com.acmerobotics.dashboard.FtcDashboard;
+import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 
 import org.firstinspires.ftc.teamcode.teleop.ProgrammingBoard4;
 
 @TeleOp()
 public class MainTeleOp extends OpMode{
     ProgrammingBoard4 board = new ProgrammingBoard4();
-    //FtcDashboard dashboard = FtcDashboard.getInstance();
-    //TelemetryPacket packet = new TelemetryPacket();
+    FtcDashboard dashboard = FtcDashboard.getInstance();
+    TelemetryPacket packet = new TelemetryPacket();
 
     @Override
     public void init(){
@@ -19,7 +19,7 @@ public class MainTeleOp extends OpMode{
     }
     @Override
     public void loop(){
-        // dashboard.sendTelemetryPacket(packet);
+        dashboard.sendTelemetryPacket(packet);
         double speedForward = -gamepad1.left_stick_y / 2.0;
         double turnSpeed = -gamepad1.right_stick_x / 2.0;
 
@@ -76,14 +76,14 @@ public class MainTeleOp extends OpMode{
         telemetry.addData("Right stick y", gamepad1.right_stick_y);
         telemetry.addData("A button", gamepad1.a);
         telemetry.addData("B button", gamepad1.b);
-        /*
+
         packet.put("Left stick x", gamepad1.left_stick_x);
         packet.put("Left stick y", gamepad1.left_stick_y);
         packet.put("Right stick x", gamepad1.right_stick_x);
         packet.put("Right stick y", gamepad1.right_stick_y);
         packet.put("A button", gamepad1.a);
         packet.put("B button", gamepad1.b);
-        */
+        
     }
 
 }
