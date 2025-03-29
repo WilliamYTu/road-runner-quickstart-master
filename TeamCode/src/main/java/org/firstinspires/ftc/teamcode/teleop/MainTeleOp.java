@@ -83,7 +83,7 @@ public class MainTeleOp extends OpMode{
         packet.put("Right stick y", gamepad1.right_stick_y);
         packet.put("A button", gamepad1.a);
         packet.put("B button", gamepad1.b);
-        
+
     }
 
 }

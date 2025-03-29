@@ -18,10 +18,10 @@ public class ProgrammingBoard4 {
 
 
     public void init(HardwareMap hwMap){
-        motor1 = hwMap.get(DcMotor.class, "motor");
-        motor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        motor2 = hwMap.get(DcMotor.class, "motor2");
+        motor2 = hwMap.get(DcMotor.class, "leftFront");
         motor2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motor1 = hwMap.get(DcMotor.class, "rightFront");
+        motor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         armMotor = hwMap.get(DcMotor.class, "armMotor");
         armMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         intakeMotor = hwMap.get(DcMotor.class, "intakeMotor");
